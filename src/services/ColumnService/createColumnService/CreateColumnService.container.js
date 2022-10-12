@@ -17,6 +17,7 @@ export const CreateColumnContainer = () => {
       <div>
          <Button onClick={() => setIsOpen(true)}>Add column</Button>
          <Modal
+            name="Create column"
             onSave={() => {
                addColumn(name);
                setIsOpen(false);
@@ -25,7 +26,7 @@ export const CreateColumnContainer = () => {
             isOpen={isOpen}
             handleClose={() => setIsOpen(false)}
          >
-            <Input value={name} onChange={setName} />
+            <Input value={name} onChange={setName} placeholder="Name..." />
          </Modal>
       </div>
    );

@@ -1,9 +1,11 @@
-import "./ColumnBottom.css"
+import "./ColumnBottom.css";
 
-export const ColumnBottom = () => {
+export const ColumnBottom = ({ handleOpenCreateTaskModal }) => {
    return (
       <>
-         <div className="addTask">+ Add Task</div>
+         <div className="addTask" onClick={handleOpenCreateTaskModal}>
+            + Add Task
+         </div>
       </>
    );
 };

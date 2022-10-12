@@ -1,7 +1,8 @@
-.columnWrapper{
-        width: 30%;
-        background-color: #d8dbe6;
-        padding: 10px;
-        margin: 10px;
-        border-radius: 6px;
+.columnWrapper {
+   width: 30%;
+   background-color: #d8dbe6;
+   padding: 10px;
+   margin: 10px;
+   border-radius: 6px;
+   height: min-content;
 }

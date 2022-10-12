@@ -1,6 +1,8 @@
 .addTask {
    color: rgba(78, 81, 97, 0.838);
    font-size: 18px;
+
+   margin-top: 10px;
 }
 .addTask:hover {
    color: rgb(34, 34, 37);

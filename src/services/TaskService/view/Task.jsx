@@ -1,10 +1,10 @@
-import "./task.css"
+import "./task.css";
 
-export const Task = () => {
+export const Task = ({ task }) => {
    return (
       <div className="taskWrapper">
-         <div className="taskTitle">Title</div>
-         <div className="taskDescription">Description</div>
+         <div className="taskTitle">{task.title}</div>
+         <div className="taskDescription">{task.description}</div>
       </div>
    );
 };

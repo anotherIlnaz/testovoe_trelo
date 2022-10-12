@@ -7,5 +7,14 @@ export const useStore = (storage) => {
       return storage.watch((data) => setState(data)).unsubscribe;
    }, []);
 
-   return state;
+   return {
+      state,
+      setState: (callback) => {
+         if (typeof callback === "function") {
+            storage.setData(callback);
+
+            return;
+         }
+      },
+   };
 };

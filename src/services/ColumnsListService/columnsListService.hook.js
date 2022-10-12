@@ -1,22 +1,43 @@
-import { useAppStorage } from "../../hooks/useAppStorage";
+import {
+   createColumn,
+   removeColumnById,
+   updateColumnById,
+} from "../../models/Column";
+import { useDeskService } from "../DesksService/DeskService.hook";
 
 export const useColumnsListService = () => {
-   const { state, setState } = useAppStorage();
+   const {
+      data: { desk },
+      events: { updateDesk },
+   } = useDeskService();
 
-   const columns = state?.desk?.columns;
+   const columns = desk.columns;
 
    const addColumn = (name) => {
-      const newColumn = {
-         name,
-         id: Date.now(),
-         tasks: [],
-      };
+      const newColumn = createColumn(name);
 
-      setState((prev) => ({
-         ...prev,
-         desk: { ...prev.desk, columns: [...prev.desk.columns, newColumn] },
+      updateDesk((prevDesk) => ({
+         ...prevDesk,
+         columns: [...prevDesk.columns, newColumn],
       }));
    };
 
-   return { data: { columns }, events: { addColumn } };
+   const updateColumn = (id, callback) => {
+      updateDesk((prevDesk) => ({
+         ...prevDesk,
+         columns: updateColumnById(prevDesk.columns, id, callback),
+      }));
+   };
+
+   const deleteColumn = (columnId) => {
+      updateDesk((prevDesk) => ({
+         ...prevDesk,
+         columns: removeColumnById(prevDesk.columns, columnId),
+      }));
+   };
+
+   return {
+      data: { columns },
+      events: { addColumn, deleteColumn, updateColumn },
+   };
 };
