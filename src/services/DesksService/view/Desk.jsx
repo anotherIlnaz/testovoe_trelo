@@ -1,11 +1,10 @@
-import { ColumnContainer } from "../../ColumnService/ColumnService.container"
-import "./Desk.css"
+import { ColumnsListContainer } from "../../ColumnsListService/columnsListSerice.container";
+import "./Desk.css";
 
 export const Desk = () => {
-        return <div className="DeskWrapper" > 
-        <ColumnContainer />
-        <ColumnContainer />
-        <ColumnContainer />
-        <ColumnContainer />
-        </div>
-}
+   return (
+      <div className="DeskWrapper">
+         <ColumnsListContainer />
+      </div>
+   );
+};

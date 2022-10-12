@@ -3,10 +3,12 @@ import { ColumnHeader } from "../view/components/ColumnHeader";
 import { ColumnBottom } from "../view/components/ColumnBottom";
 import "./Column.css";
 
-export const Column = () => {
+export const Column = ({ column }) => {
    return (
       <div className="columnWrapper">
-         <ColumnHeader />
+         <ColumnHeader columnName={column?.name} />
+         <TaskContainer />
+         <TaskContainer />
          <TaskContainer />
          <ColumnBottom />
       </div>

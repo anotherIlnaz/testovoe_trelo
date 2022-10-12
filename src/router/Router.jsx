@@ -8,6 +8,7 @@ export const Router = () => {
          <BrowserRouter>
             <Routes>
                <Route path="/" element={<MainLayout />}>
+                  <Route path="/" element={<DeskContainer />} />
                </Route>
             </Routes>
          </BrowserRouter>

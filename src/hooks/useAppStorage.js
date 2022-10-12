@@ -12,8 +12,6 @@ export const useAppStorage = () => {
 
             return;
          }
-
-         appStorage.setData((prev) => ({ ...prev, ...payload }));
       },
    };
 };

@@ -1,3 +1,4 @@
 .DeskWrapper{
         display: flex;
+        user-select: none;
 }

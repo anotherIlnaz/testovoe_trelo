@@ -1,0 +1,34 @@
+.navbarContainer {
+   display: flex;
+   justify-content: space-between;
+   color: aliceblue;
+
+   font-size: 26px;
+   padding: 16px;
+
+   background: linear-gradient(90deg, #767add, #fea8d7) fixed;
+
+   position: relative;
+}
+
+.addColumn {
+   border: 1px rgb(224, 211, 211) solid;
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: 5px;
+   color: #1a1e8d;
+   font-size: 14px;
+   display: flex;
+   align-items: center;
+   font-weight: 500;
+   padding: 2px 15px;
+}
+
+.addColumn:hover {
+   color: aliceblue;
+   user-select: none;
+   cursor: pointer;
+}
+
+.advertising {
+   font-style: italic;
+}
