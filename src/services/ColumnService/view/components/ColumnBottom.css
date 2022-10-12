@@ -1,0 +1,14 @@
+.addTask {
+   color: rgba(78, 81, 97, 0.838);
+   font-size: 18px;
+}
+.addTask:hover {
+   color: rgb(34, 34, 37);
+   user-select: none;
+   cursor: pointer;
+}
+.addTask:active {
+   color: rgb(168, 168, 175);
+   user-select: none;
+   cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.columnHeaderContainer {
+   display: flex;
+   justify-content: space-between;
+}
+
+.columnName {
+   font-weight: 600;
+   font-size: 20px;
+}
+
+.columnDelete:hover {
+   color: red;
+   cursor: pointer;
+   user-select: none;
+}
