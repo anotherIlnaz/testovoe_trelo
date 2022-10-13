@@ -1,9 +1,10 @@
+import { useTasksListService } from "../TasksListService/TasksListService.hook";
 import { DisplayTaskModal } from "./view/DisplayTaskModal";
 
-export const DislplayTaskContainer = () => {
+export const DislplayTaskContainer = ({ isOpen, handleCloseModal, openedDisplayTaskId }) => {
+   
+
    return (
-      <>
-         <DisplayTaskModal />
-      </>
+      <DisplayTaskModal isOpen={isOpen} handleCloseModal={handleCloseModal} openedDisplayTaskId={openedDisplayTaskId}/>
    );
 };

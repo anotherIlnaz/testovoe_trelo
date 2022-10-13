@@ -1,16 +1,23 @@
-.taskWrapper{ 
-        border-radius: 4px;
-        background-color: azure;
+.taskWrapper {
+   border-radius: 4px;
+   background-color: azure;
 
-        margin: 10px 0px ;
-        padding: 4px 10px;
+   margin: 10px 0px;
+   padding: 4px 10px;
+
+   transition: 0.2s;
+}
+.taskWrapper:hover {
+   cursor: pointer;
+
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.taskTitle{
-        color: #00c7e6;
-        font-size: 20px;
+.taskTitle {
+   color: #00c7e6;
+   font-size: 20px;
 }
 
-.taskDescription{
-        color: #475153;
+.taskDescription {
+   color: #475153;
 }

@@ -1,9 +1,16 @@
 import { Modal } from "../../../components/Modal/Modal";
 
-export const DisplayTaskModal = () => {
+export const DisplayTaskModal = ({
+   isOpen,
+   handleCloseModal,
+   task,
+   openedDisplayTaskId
+}) => {
    return (
       <>
-         <Modal />
+         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
+            {task}
+         </Modal>
       </>
    );
 };

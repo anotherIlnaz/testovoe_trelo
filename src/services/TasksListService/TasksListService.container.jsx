@@ -1,7 +1,7 @@
 import { TaskContainer } from "../TaskService/TaskService.container";
 import { useTasksListService } from "./tasksListService.hook";
 
-export const TasksListServiceContainer = ({ columnId }) => {
+export const TasksListServiceContainer = ({ columnId, handleClickTask }) => {
    const {
       data: { tasks },
    } = useTasksListService(columnId);
@@ -9,7 +9,7 @@ export const TasksListServiceContainer = ({ columnId }) => {
    return (
       <>
          {tasks?.map((task) => (
-            <TaskContainer task={task} />
+            <TaskContainer task={task} handleClickTask={handleClickTask} />
          ))}
       </>
    );
