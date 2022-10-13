@@ -14,7 +14,7 @@ export const useDisplayTaskService = (columnId, taskId) => {
    };
 
    return {
-      data: { task: getTask() },
+      data: { task: getTask(), column },
       events: { getTask },
    };
 };

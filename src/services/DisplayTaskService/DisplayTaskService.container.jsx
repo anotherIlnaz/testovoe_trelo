@@ -1,3 +1,4 @@
+import { useTasksListService } from "../TasksListService/tasksListService.hook";
 import { useDisplayTaskService } from "./displayTaskService.hook";
 import { DisplayTaskModal } from "./view/DisplayTaskModal";
 
@@ -9,17 +10,24 @@ export const DislplayTaskContainer = ({
    const taskId = openedDisplayTaskIdAndColumnId?.taskId;
    const columnId = openedDisplayTaskIdAndColumnId?.columnId;
 
-   console.log(taskId, columnId);
+   const {
+      data: { task, column },
+   } = useDisplayTaskService(columnId, taskId);
 
    const {
-      data: { task },
-   } = useDisplayTaskService(columnId, taskId);
+      events: { handleUpdateTask, handleDeleteTask },
+   } = useTasksListService(columnId);
+
+   if (!task) return null;
 
    return (
       <DisplayTaskModal
          isOpen={isOpen}
          handleCloseModal={handleCloseModal}
          task={task}
+         column={column}
+         handleUpdateTask={handleUpdateTask}
+         handleDeleteTask={handleDeleteTask}
       />
    );
 };

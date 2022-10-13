@@ -1,8 +1,13 @@
 import "./Button.css";
 
-export const Button = ({ onClick, children }) => {
+export const ButtonType = {
+   default: "btn-default",
+   danger: "btn-danger",
+};
+
+export const Button = ({ onClick, children, type = ButtonType.default }) => {
    return (
-      <div className="buttonStyles" onClick={onClick}>
+      <div className={`buttonStyles ${type}`} onClick={onClick}>
          {children}
       </div>
    );

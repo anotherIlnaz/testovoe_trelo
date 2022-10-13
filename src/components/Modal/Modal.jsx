@@ -1,7 +1,15 @@
 import { Button } from "../Button/Button";
 import "./Modal.css";
 
-export const Modal = ({ isOpen, handleClose, children, onSave, name }) => {
+export const Modal = ({
+   isOpen,
+   handleClose,
+   children,
+   onSave,
+   name,
+   bottomContent,
+   onDelete
+}) => {
    if (!isOpen) return null;
 
    return (
@@ -17,6 +25,7 @@ export const Modal = ({ isOpen, handleClose, children, onSave, name }) => {
                <div>{children}</div>
 
                <div className="modalBottom">
+                  <div onClick={onDelete}>{bottomContent}</div>
                   <Button onClick={onSave}>Save</Button>
                </div>
             </div>

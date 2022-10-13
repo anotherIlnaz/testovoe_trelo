@@ -1,5 +1,5 @@
 import { MainLayout } from "../layouts/MainLayout";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { DeskContainer } from "../services/DesksService/DeskService.container";
 
 export const Router = () => {
@@ -7,9 +7,10 @@ export const Router = () => {
       <>
          <BrowserRouter>
             <Routes>
-               <Route path="/" element={<MainLayout />}>
-                  <Route path="/" element={<DeskContainer />} />
+               <Route path="/desk" element={<MainLayout />}>
+                  <Route index element={<DeskContainer />} />
                </Route>
+               <Route path="*" element={<Navigate to="/desk" />} />
             </Routes>
          </BrowserRouter>
       </>

@@ -1,8 +1,5 @@
 .buttonStyles {
-   border: 1px rgb(224, 211, 211) solid;
-   background: rgba(255, 255, 255, 0.2);
    border-radius: 5px;
-   color: #1a1e8d;
    font-size: 14px;
    display: flex;
    align-items: center;
@@ -12,14 +9,31 @@
 
    width: min-content;
    white-space: nowrap;
+   border: 1px rgb(224, 211, 211) solid;
 
    transition: 0.2s;
+   background: rgba(255, 255, 255, 0.2);
 }
+
 .buttonStyles:hover {
    user-select: none;
    cursor: pointer;
-   background-color: rgb(86, 50, 245);
-   color: white;
-   border-color: white;
+   color: white !important;
+   border-color: white !important;
+}
 
+.btn-default {
+   color: #1a1e8d;
+}
+
+.btn-default:hover {
+   background-color: rgb(86, 50, 245);
+}
+
+.btn-danger {
+   color: #b81130;
+}
+
+.btn-danger:hover {
+   background-color: #b81130;
 }

@@ -1,4 +1,4 @@
-import { createTask, editTask } from "../../models/Task";
+import { createTask, editTask, removeTask } from "../../models/Task";
 import { useColumnsListService } from "../ColumnsListService/columnsListService.hook";
 
 export const useTasksListService = (columnId) => {
@@ -18,23 +18,35 @@ export const useTasksListService = (columnId) => {
       }));
    };
 
-   const handleUpdateTask = (taskId, { title, description, columnId }) => {
+   const handleUpdateTask = (
+      taskId,
+      { title, description, columnId: taskColumnId }
+   ) => {
       updateColumn(columnId, (prev) => ({
          ...prev,
          tasks: prev.tasks.map((task) => {
             if (task.id !== taskId) return task;
 
-            return editTask(task, {
+            const editedTask = editTask(task, {
                title,
                description,
-               columnId,
+               columnId: taskColumnId,
             });
+
+            return editedTask;
          }),
+      }));
+   };
+
+   const handleDeleteTask = (taskId) => {
+      updateColumn(columnId, (prev) => ({
+         ...prev,
+         tasks: removeTask(prev.tasks, taskId),
       }));
    };
 
    return {
       data: { tasks: column?.tasks || [] },
-      events: { handleCreateTask, handleUpdateTask },
+      events: { handleCreateTask, handleUpdateTask, handleDeleteTask },
    };
 };
