@@ -1,11 +1,11 @@
 import "./task.css";
 
-export const Task = ({ task, handleClickTask }) => {
+export const Task = ({ task, handleClickOnTask }) => {
    return (
       <div
          className="taskWrapper"
          onClick={() =>
-            handleClickTask({ taskId: task.id, columnId: task.columnId })
+            handleClickOnTask({ taskId: task.id, columnId: task.columnId })
          }
       >
          <div className="taskTitle">{task.title}</div>

@@ -1,7 +1,7 @@
 import { useColumnsListService } from "../ColumnsListService/columnsListService.hook";
 import { Column } from "./view/Column";
 
-export const ColumnContainer = ({ column, handleOpenCreateTaskModal, handleClickTask }) => {
+export const ColumnContainer = ({ column, handleOpenCreateTaskModal, handleClickOnTask }) => {
    const {
       events: { deleteColumn },
    } = useColumnsListService();
@@ -11,7 +11,7 @@ export const ColumnContainer = ({ column, handleOpenCreateTaskModal, handleClick
          column={column}
          deleteColumn={deleteColumn}
          handleOpenCreateTaskModal={() => handleOpenCreateTaskModal(column.id)}
-         handleClickTask={handleClickTask}
+         handleClickOnTask={handleClickOnTask}
       />
    );
 };

@@ -7,7 +7,7 @@ export const Column = ({
    column,
    deleteColumn,
    handleOpenCreateTaskModal,
-   handleClickTask,
+   handleClickOnTask,
 }) => {
    return (
       <div className="columnWrapper">
@@ -18,7 +18,7 @@ export const Column = ({
          />
          <TasksListServiceContainer
             columnId={column.id}
-            handleClickTask={handleClickTask}
+            handleClickOnTask={handleClickOnTask}
          />
          <ColumnBottom handleOpenCreateTaskModal={handleOpenCreateTaskModal} />
       </div>

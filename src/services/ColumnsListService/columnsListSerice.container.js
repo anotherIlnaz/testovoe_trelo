@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ColumnContainer } from "../ColumnService/ColumnService.container";
 import { DislplayTaskContainer } from "../DisplayTaskService/DisplayTaskService.container";
 import { CreateTaskContainer } from "../TaskService/CreateTaskService/CreateTaskService.container";
+import { useColumnsListService } from "./columnsListService.hook";
 
 export const ColumnsListContainer = () => {
    const [openedModalColumnId, setOpenedModalColumnId] = useState(null);
@@ -12,12 +13,14 @@ export const ColumnsListContainer = () => {
 
    const isDisplayTaskModalOpen = Boolean(openedDisplayTaskId);
 
+   const {data:{columns}} = useColumnsListService()
+
    return (
       <>
          <DislplayTaskContainer
             isOpen={isDisplayTaskModalOpen}
             handleCloseModal={() => setOpenedDisplayTaskId(null)}
-            openedDisplayTaskId={openedDisplayTaskId}
+            openedDisplayTaskIdAndColumnId={openedDisplayTaskId}
          />
          <CreateTaskContainer
             openedModalColumnId={openedModalColumnId}
@@ -29,7 +32,7 @@ export const ColumnsListContainer = () => {
                handleOpenCreateTaskModal={setOpenedModalColumnId}
                key={column.id}
                column={column}
-               handleClickTask={setOpenedDisplayTaskId}
+               handleClickOnTask={setOpenedDisplayTaskId}
             />
          ))}
       </>
