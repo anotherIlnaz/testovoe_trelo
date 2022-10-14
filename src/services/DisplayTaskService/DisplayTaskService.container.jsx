@@ -5,10 +5,10 @@ import { DisplayTaskModal } from "./view/DisplayTaskModal";
 export const DislplayTaskContainer = ({
    isOpen,
    handleCloseModal,
-   openedDisplayTaskIdAndColumnId,
+   openedDisplayTaskPayload,
 }) => {
-   const taskId = openedDisplayTaskIdAndColumnId?.taskId;
-   const columnId = openedDisplayTaskIdAndColumnId?.columnId;
+   const taskId = openedDisplayTaskPayload?.taskId;
+   const columnId = openedDisplayTaskPayload?.columnId;
 
    const {
       data: { task, column },

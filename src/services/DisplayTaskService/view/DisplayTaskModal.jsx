@@ -9,12 +9,14 @@ export const DisplayTaskModal = ({
    task,
    column,
    handleUpdateTask,
-   handleDeleteTask
+   handleDeleteTask,
 }) => {
    const [patchFormData, setPatchFormData] = useState({
       title: task?.title,
       description: task?.description,
    });
+
+   console.log(isOpen);
 
    return (
       <>

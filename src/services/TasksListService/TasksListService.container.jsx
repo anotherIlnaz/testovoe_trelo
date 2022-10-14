@@ -8,8 +8,13 @@ export const TasksListServiceContainer = ({ columnId, handleClickOnTask }) => {
 
    return (
       <>
-         {tasks?.map((task) => (
-            <TaskContainer task={task} handleClickOnTask={handleClickOnTask} key={task.id} />
+         {tasks?.map((task, index) => (
+            <TaskContainer
+               task={task}
+               handleClickOnTask={handleClickOnTask}
+               key={task.id}
+               index={index}
+            />
          ))}
       </>
    );

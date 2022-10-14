@@ -8,9 +8,25 @@ export const Column = ({
    deleteColumn,
    handleOpenCreateTaskModal,
    handleClickOnTask,
+   handleMoveTask,
 }) => {
    return (
-      <div className="columnWrapper">
+      <div
+         className="columnWrapper"
+         onDragOver={(event) => {
+            event.preventDefault();
+            event.dataTransfer.move = "true";
+         }}
+         onDrop={(event) => {
+            event.dataTransfer.dropEffect = "move";
+
+            const payloadJson = event.dataTransfer.getData("payload");
+
+            const payload = JSON.parse(payloadJson);
+
+            handleMoveTask({ ...payload, columnId: column?.id });
+         }}
+      >
          <ColumnHeader
             columnName={column?.name}
             deleteColumn={deleteColumn}

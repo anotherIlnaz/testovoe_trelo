@@ -9,6 +9,7 @@ export const Router = () => {
             <Routes>
                <Route path="/desk" element={<MainLayout />}>
                   <Route index element={<DeskContainer />} />
+                  <Route path=":taskId" element={<DeskContainer />} />
                </Route>
                <Route path="*" element={<Navigate to="/desk" />} />
             </Routes>
